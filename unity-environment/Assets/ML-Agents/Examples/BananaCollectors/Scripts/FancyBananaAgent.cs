@@ -40,8 +40,13 @@ public class FancyBananaAgent : Agent
 
     public override void CollectObservations()
     {
-        
-        
+        float rayDistance = 50f;
+        float[] rayAngles = { 20f, 90f, 160f, 45f, 135f, 70f, 110f };
+        string[] detectableObjects = { "banana", "wall", "badBanana"};
+        AddVectorObs(rayPer.Perceive(rayDistance, rayAngles, detectableObjects, 0f, 0f));
+        Vector3 localVelocity = transform.InverseTransformDirection(agentRB.velocity);
+        AddVectorObs(localVelocity.x);
+        AddVectorObs(localVelocity.z);        
     }
 
     public Color32 ToColor(int HexVal)
