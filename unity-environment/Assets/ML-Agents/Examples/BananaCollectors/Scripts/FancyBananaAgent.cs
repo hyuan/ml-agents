@@ -79,16 +79,16 @@ public class FancyBananaAgent : Agent
         {
             switch ((int)act[0])
             {
-                case 1:
+                case 0:
                     dirToGo = transform.forward;
                     break;
-                case 2:
+                case 1:
                     dirToGo = -transform.forward;
                     break;
-                case 3:
+                case 2:
                     rotateDir = -transform.up;
                     break;
-                case 4:
+                case 3:
                     rotateDir = transform.up;
                     break;
             }
